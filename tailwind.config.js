@@ -1,4 +1,4 @@
-import {heroui} from "@heroui/theme"
+import { heroui } from "@heroui/theme"
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -12,6 +12,16 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
+      },
+      colors: {
+        primary: "#122243", // Dark Blue
+        secondary: "#FBBF24", // Yellow
+        accent: "#38BDF8", // Light Blue
+        background: "#F7F5F2", // Light Gray 
+        success: "#2A8703", // Green
+        warning: "#F59E0B", // Orange
+        error: "#DC2626", // Red
+        info: "#3B82F6", // Blue
       },
     },
   },
