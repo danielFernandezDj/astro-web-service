@@ -24,6 +24,8 @@ import {
   HeartFilledIcon,
   SearchIcon,
   Logo,
+  LogoIcon,
+  RocketIcon,
 } from "@/components/icons";
 
 export const Navbar = () => {
@@ -53,8 +55,8 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            <LogoIcon size={130} />
+            {/* <p className="font-bold text-xl">Astro <br /> <span className="text-xs uppercase font-medium">Web Services</span></p> */}
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -95,12 +97,10 @@ export const Navbar = () => {
         <NavbarItem className="hidden md:flex">
           <Button
             isExternal
-
             as={Link}
             className="text-sm font-normal bg-secondary text-default-600 rounded-full"
             href={siteConfig.links.sponsor}
-            // startContent={<HeartFilledIcon className="text-danger" />}
-            // variant="flat"
+            startContent={<RocketIcon size={16}/>}
           >
             Get Started
           </Button>

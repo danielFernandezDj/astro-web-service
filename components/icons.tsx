@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { IconSvgProps } from "@/types";
+import Image from "next/image";
 
 export const Logo: React.FC<IconSvgProps> = ({
   size = 36,
@@ -22,6 +23,21 @@ export const Logo: React.FC<IconSvgProps> = ({
       fillRule="evenodd"
     />
   </svg>
+);
+
+export const LogoIcon: React.FC<{ size?: number; className?: string }> = ({
+  size = 24,
+  className,
+  ...props
+}) => (
+  <Image
+    src="/logo1.png"
+    alt="Logo"
+    width={size}
+    height={size}
+    className={className}
+    {...props}
+  />
 );
 
 export const CircleCheckIn: React.FC<IconSvgProps> = ({
@@ -47,7 +63,7 @@ export const CircleCheckIn: React.FC<IconSvgProps> = ({
   </svg>
 );
 
-export const LocationMap: React.FC<IconSvgProps> = ({
+export const RocketIcon: React.FC<IconSvgProps> = ({
   size = 24,
   width,
   height,
@@ -65,8 +81,10 @@ export const LocationMap: React.FC<IconSvgProps> = ({
     strokeLinejoin="round"
     {...props}
   >
-    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-    <path d="m9 10 2 2 4-4" />
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+    <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
   </svg>
 );
 

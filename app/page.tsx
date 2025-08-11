@@ -8,7 +8,6 @@ import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import { CircleCheckIn } from "@/components/icons";
-import { LocationMap } from "@/components/icons";
 import Image from "next/image";
 
 export default function Home() {
@@ -22,7 +21,7 @@ export default function Home() {
           <span
             className={title({
               size: isMobile ? "sm" : "lg",
-              class: "text-primary",
+              class: "text-primary font-bold",
             })}
           >
             The Digital Face of <br /> Your Restaurant.
