@@ -13,6 +13,7 @@ export const title = tv({
       foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
     },
     size: {
+      xs: "text-xs lg:text-lg",
       sm: "text-3xl lg:text-4xl",
       md: "text-[2.3rem] lg:text-5xl",
       lg: "text-4xl lg:text-6xl",
@@ -45,6 +46,11 @@ export const subtitle = tv({
   variants: {
     fullWidth: {
       true: "!w-full",
+    },
+    size: {
+      sm: "text-sm",
+      md: "text-base",
+      lg: "text-lg",
     },
   },
   defaultVariants: {
