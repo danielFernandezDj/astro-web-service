@@ -17,16 +17,7 @@ import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
-  SearchIcon,
-  Logo,
-  LogoIcon,
-  RocketIcon,
-} from "@/components/icons";
+import { GithubIcon, SearchIcon, Logo, RocketIcon } from "@/components/icons";
 
 export const Navbar = () => {
   const searchInput = (
@@ -55,8 +46,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <LogoIcon size={130} />
-            {/* <p className="font-bold text-xl">Astro <br /> <span className="text-xs uppercase font-medium">Web Services</span></p> */}
+            <Logo size={130} />
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -65,7 +55,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium",
+                  "data-[active=true]:text-primary data-[active=true]:font-medium"
                 )}
                 color="foreground"
                 href={item.href}
@@ -82,15 +72,6 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
-          </Link>
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
@@ -100,7 +81,7 @@ export const Navbar = () => {
             as={Link}
             className="text-sm font-normal bg-secondary text-default-600 rounded-full"
             href={siteConfig.links.sponsor}
-            startContent={<RocketIcon size={16}/>}
+            startContent={<RocketIcon size={16} />}
           >
             Get Started
           </Button>
