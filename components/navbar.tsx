@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -14,13 +17,14 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, Logo, RocketIcon } from "@/components/icons";
+import {  } from "@/components/theme-switch";
+import { Logo, RocketIcon } from "@/components/icons";
 
 export const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky">
+    <HeroUINavbar maxWidth="xl" position="sticky" isMenuOpen={menuOpen} onMenuOpenChange={setMenuOpen}>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
@@ -49,9 +53,10 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden sm:flex gap-2">
-        </NavbarItem>
-        <Link className="text-sm text-primary hover:cursor-pointer hover:underline decoration-solid">1+(702) 334-523</Link>
+        <NavbarItem className="hidden sm:flex gap-2"></NavbarItem>
+        <Link className="text-sm text-primary hover:cursor-pointer hover:underline decoration-solid">
+          1+(702) 334-523
+        </Link>
         {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
         <NavbarItem className="hidden md:flex">
           <Button
@@ -66,11 +71,14 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
+      <NavbarContent className="sm:hidden basis-1 pl-4 text-black" justify="end">
+        <Link className="text-xs text-primary hover:cursor-pointer hover:underline decoration-solid">
+          1+(702) 334-523
         </Link>
-        <ThemeSwitch />
+        {/* <Link isExternal aria-label="Github" href={siteConfig.links.github}>
+          <GithubIcon className="text-default-500" />
+        </Link> */}
+        {/* <ThemeSwitch /> */}
         <NavbarMenuToggle />
       </NavbarContent>
 
@@ -78,22 +86,21 @@ export const Navbar = () => {
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href="#"
-                size="lg"
-              >
+              <Link href={item.href} size="lg" onClick={() => setMenuOpen(false)}>
                 {item.label}
               </Link>
             </NavbarMenuItem>
           ))}
         </div>
+        <Button
+          isExternal
+          as={Link}
+          className="text-md text-black font-normal px-10 mt-4 bg-secondary rounded-2xl"
+          href={siteConfig.links.sponsor}
+          startContent={<RocketIcon size={16} />}
+        >
+          Get Started
+        </Button>
       </NavbarMenu>
     </HeroUINavbar>
   );
