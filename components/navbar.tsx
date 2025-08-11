@@ -95,13 +95,14 @@ export const Navbar = () => {
         <NavbarItem className="hidden md:flex">
           <Button
             isExternal
+
             as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
+            className="text-sm font-normal bg-secondary text-default-600 rounded-full"
             href={siteConfig.links.sponsor}
-            startContent={<HeartFilledIcon className="text-danger" />}
-            variant="flat"
+            // startContent={<HeartFilledIcon className="text-danger" />}
+            // variant="flat"
           >
-            Sponsor
+            Get Started
           </Button>
         </NavbarItem>
       </NavbarContent>
