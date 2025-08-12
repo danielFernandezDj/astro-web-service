@@ -17,7 +17,7 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
-import {  } from "@/components/theme-switch";
+import { ThemeSwitch  } from "@/components/theme-switch";
 import { Logo, RocketIcon } from "@/components/icons";
 
 export const Navbar = () => {
@@ -50,7 +50,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
+        className="hidden sm:flex basis-1/5 sm:basis-full "
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2"></NavbarItem>
@@ -69,10 +69,14 @@ export const Navbar = () => {
             Get Started
           </Button>
         </NavbarItem>
+
+        <NavbarItem className="hidden md:flex lg:hidden">
+          <NavbarMenuToggle />
+        </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4 text-black" justify="end">
-        <Link className="text-xs text-primary hover:cursor-pointer hover:underline decoration-solid">
+      <NavbarContent className="md:hidden basis-1 pl-4 text-black" justify="end">
+        <Link className="md:hidden text-xs text-primary hover:cursor-pointer hover:underline decoration-solid">
           1+(702) 334-523
         </Link>
         {/* <Link isExternal aria-label="Github" href={siteConfig.links.github}>
@@ -95,7 +99,7 @@ export const Navbar = () => {
         <Button
           isExternal
           as={Link}
-          className="text-md text-black font-normal px-10 mt-4 bg-secondary rounded-2xl"
+          className="md:hidden text-md text-black font-normal px-10 mt-4 bg-secondary rounded-2xl"
           href={siteConfig.links.sponsor}
           startContent={<RocketIcon size={16} />}
         >
