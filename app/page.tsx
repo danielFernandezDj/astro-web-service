@@ -15,18 +15,16 @@ import {
 import Image from "next/image";
 
 export default function Home() {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-
   return (
-    <main className="m-auto">
+    <main className="pb-20">
       {/* Hero */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 p-4 -mt-16 bg-background">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 p-4">
         {/* Left */}
-        <section className="flex flex-col items-start justify-center gap-4 py-8 md:py-10 md:pl-10">
-          <div className="inline-block max-w-xl justify-center">
+        <section className="flex flex-col items-start md:items-center lg:items-start justify-center gap-4 py-8 md:py-10 md:pl-10">
+          <div className="inline-block max-w-xl items-center justify-center m-auto md:text-center lg:text-start">
             <span
               className={title({
-                size: isMobile ? "sm" : "lg",
+                size: "md",
                 class: "text-primary font-bold",
               })}
             >
@@ -39,7 +37,7 @@ export default function Home() {
               into customers.
             </div>
 
-            <div className="inline-block md:hidden max-w-xl items-center justify-center ">
+            <div className="inline-block lg:hidden max-w-xl items-center justify-center ">
               <Image
                 src={"/hero-img-corp.png"}
                 alt="Hero Image"
@@ -51,7 +49,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-2 font-small ">
+          <div className="flex flex-col md:flex-row gap-2 font-small ">
             <span className="text-gray-600 flex gap-2">
               {" "}
               <CircleCheckIn className="text-success" /> Professional Website
@@ -66,7 +64,7 @@ export default function Home() {
             </span>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col lg:flex-row gap-4 m-auto">
             <Link
               isExternal
               className={`${buttonStyles({
@@ -78,8 +76,8 @@ export default function Home() {
             >
               Get Started
             </Link>
-            <span className="text-gray-600 flex items-center gap-1">
-              <span className="hidden md:inline-block">{"-->"}</span> Get your
+            <span className="text-gray-600 flex items-center gap-1r">
+              <span className="hidden lg:inline-block">{"-->"}</span> Get your
               free consultation today
             </span>
           </div>
@@ -101,9 +99,9 @@ export default function Home() {
       </div>
 
       {/* Service Overview */}
-      <section className="flex justify-evenly gap-6">
-        <div className="flex flex-col justify-center items-center gap-2 w-xs">
-          <CameraIcon size={46} color="black" />
+      <section className="flex flex-col md:flex-row justify-evenly gap-6">
+        <div className="flex flex-col justify-center items-center w-xs">
+          <CameraIcon size={42} color="black" className="mb-2" />
           <span
             className={title({
               size: "xs",
@@ -112,13 +110,18 @@ export default function Home() {
           >
             Photos & Video That Sell
           </span>
-          <span className="text-gray-600 text-center">
+          <span
+            className={subtitle({
+              size: "sm",
+              class: "text-gray-600 text-center",
+            })}
+          >
             A small professional photo/video session to boost your brand.
           </span>
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-2 w-xs">
-          <OrigamiIcon size={46} color="black" />
+        <div className="flex flex-col justify-center items-center w-xs">
+          <OrigamiIcon size={42} color="black" className="mb-2" />
           <span
             className={title({
               size: "xs",
@@ -127,13 +130,18 @@ export default function Home() {
           >
             Menu Redesign & Multi-Platform
           </span>
-          <span className="text-gray-600 text-center">
+          <span
+            className={subtitle({
+              size: "sm",
+              class: "text-gray-600 text-center",
+            })}
+          >
             We redesign your menu and publish it on UberEats, DoorDash, Yelp.
           </span>
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-2 w-xs">
-          <SettingsIcon size={46} color="black" />
+        <div className="flex flex-col justify-center items-center w-xs">
+          <SettingsIcon size={42} color="black" className="mb-2" />
           <span
             className={title({
               size: "xs",
@@ -142,7 +150,12 @@ export default function Home() {
           >
             Google & Tech Setup + Support{" "}
           </span>
-          <span className="text-gray-600 text-center">
+          <span
+            className={subtitle({
+              size: "sm",
+              class: "text-gray-600 text-center",
+            })}
+          >
             We optimize Google Maps & Workspace, and give you lifetime support.
           </span>
         </div>
