@@ -14,6 +14,7 @@ export const title = tv({
     },
     size: {
       cardTitle: "text-lg lg:text-xl",
+      price: "text-md",
       xs: "text-lg",
       sm: "text-3xl lg:text-4xl",
       md: "text-[2rem] md:text-5xl lg:text-6xl",

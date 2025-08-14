@@ -3,8 +3,10 @@
 import { Link } from "@heroui/link";
 import { button as buttonStyles } from "@heroui/theme";
 import { useMediaQuery } from "react-responsive";
+
 import RestaurantMarketingHero from "@/components/home-page/RestaurantMarketingHero";
 import SucceedOnline from "@/components/home-page/SucceedOnline";
+import ChoosePlan from "@/components/home-page/ChoosePLan";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -166,6 +168,7 @@ export default function Home() {
       {/* Problem and Solution Section */}
       <RestaurantMarketingHero />
       <SucceedOnline />
+      <ChoosePlan />
     </main>
   );
 }
