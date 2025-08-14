@@ -1,7 +1,6 @@
 "use client";
 
 import { title, subtitle } from "@/components/primitives";
-import { Link } from "@heroui/link";
 import Image from "next/image";
 import { button as buttonStyles } from "@heroui/theme";
 
@@ -156,12 +155,12 @@ export default function RestaurantMarketingHero() {
       </section>
 
       <section className="flex flex-col lg:flex-row items-center text-center rounded-2xl p-8 bg-secondary">
-        <div className="md:w-md lg:w-1/2 mb-8 lg:mb-0">
+        <div className="md:w-md lg:w-1/2 mb-8 lg:mb-0 lg:text-start">
           <span className={title({ size: "sm", class: "font-bold" })}>
-            Results That Speak <br /> For Themselves
+            Results That Speak For Themselves
           </span>
         </div>
-        <div className="grid lg:grid-cols-3 lg:grid-rows-1 gap-8">
+        <div className="grid md:grid-cols-3 lg:grid-rows-1 gap-8">
           {ResultsList.map((item, index) => (
             <div
               key={index}

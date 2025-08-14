@@ -4,6 +4,7 @@ import { Link } from "@heroui/link";
 import { button as buttonStyles } from "@heroui/theme";
 import { useMediaQuery } from "react-responsive";
 import RestaurantMarketingHero from "@/components/home-page/RestaurantMarketingHero";
+import SucceedOnline from "@/components/home-page/SucceedOnline";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -78,8 +79,8 @@ export default function Home() {
               Get Started
             </Link>
             <span className="text-gray-600 flex items-center gap-1r">
-              <span className="hidden lg:inline-block pr-2">{"--> "}</span> Get your
-              free consultation today
+              <span className="hidden lg:inline-block pr-2">{"--> "}</span> Get
+              your free consultation today
             </span>
           </div>
         </section>
@@ -164,6 +165,7 @@ export default function Home() {
 
       {/* Problem and Solution Section */}
       <RestaurantMarketingHero />
+      <SucceedOnline />
     </main>
   );
 }
