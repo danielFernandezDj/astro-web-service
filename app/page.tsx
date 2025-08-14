@@ -3,6 +3,7 @@
 import { Link } from "@heroui/link";
 import { button as buttonStyles } from "@heroui/theme";
 import { useMediaQuery } from "react-responsive";
+import RestaurantMarketingHero from "@/components/home-page/RestaurantMarketingHero";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -64,7 +65,7 @@ export default function Home() {
             </span>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-4 m-auto">
+          <div className="flex flex-col lg:flex-row lg:justify-start lg:w-full gap-4 m-auto">
             <Link
               isExternal
               className={`${buttonStyles({
@@ -77,7 +78,7 @@ export default function Home() {
               Get Started
             </Link>
             <span className="text-gray-600 flex items-center gap-1r">
-              <span className="hidden lg:inline-block">{"-->"}</span> Get your
+              <span className="hidden lg:inline-block pr-2">{"--> "}</span> Get your
               free consultation today
             </span>
           </div>
@@ -160,6 +161,9 @@ export default function Home() {
           </span>
         </div>
       </section>
+
+      {/* Problem and Solution Section */}
+      <RestaurantMarketingHero />
     </main>
   );
 }
