@@ -15,7 +15,7 @@ export default function ChoosePlan() {
   });
 
   return (
-    <main className="flex flex-col items-center text-center  py-8  gap-8 md:p-0">
+    <main className="flex flex-col items-center text-center py-8 md:gap-4">
       {/* Header */}
       <section>
         <span className={title({ size: "sm" })}>Choose Your Success Plan</span>
@@ -110,14 +110,14 @@ export default function ChoosePlan() {
           </div>
         </div>
 
-        {/* <div className="col-span-2 flex flex-col justify-center items-center gap-6 bg-white rounded-2xl p-8 shadow-lg w-full">
+        <div className="md:col-span-2 flex flex-col md:flex-wrap justify-center items-center w-full gap-6 bg-white rounded-2xl p-8 shadow-lg">
           <div className="flex flex-col items-center m-auto gap-2">
             <span className={title({ size: "sm" })}>Monthly Care</span>
             <span className={subtitle({ size: "sm" })}>
               Ongoing updates and support to keep you fresh
             </span>
           </div>
-          <ul className="flex flex-wrap justify-center gap-4 w-2xl m-auto">
+          <ul className="flex flex-col md:flex-row md:flex-wrap justify-center gap-4 md:w-2xl m-auto">
             <span className="text-gray-600 flex gap-2">
               <CircleCheckIn className="text-success" />
               Monthly menu updates
@@ -142,7 +142,7 @@ export default function ChoosePlan() {
           <Link href={""}>
             <button className={button}>Get Started</button>
           </Link>
-        </div> */}
+        </div>
       </section>
     </main>
   );

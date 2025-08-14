@@ -20,7 +20,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-16">
+    <main className="flex flex-col gap-24">
       {/* Hero */}
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-4 p-4">
         {/* Left */}
@@ -103,7 +103,7 @@ export default function Home() {
       </div>
 
       {/* Service Overview */}
-      <section className="flex flex-col md:flex-row justify-evenly gap-6 -mt-10">
+      <section className="flex flex-col md:flex-row justify-evenly gap-6 -mt-15">
         <div className="flex flex-col justify-center items-center w-xs">
           <CameraIcon size={42} color="black" className="mb-2" />
           <span
