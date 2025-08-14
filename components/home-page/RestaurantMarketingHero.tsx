@@ -24,7 +24,7 @@ export default function RestaurantMarketingHero() {
 
   return (
     <main className="flex flex-col items-center justify-center gap-8 lg:p-8 mt-16">
-      <section className="md:text-center w-full p-4 py-8 lg:p-16 bg-primary text-white rounded-2xl shadow-lg">
+      <section className="md:text-center w-full p-4 py-8 lg:p-16 bg-primary text-white rounded-2xl">
         {/* Header */}
         <div className="flex flex-col md:items-center justify-center gap-4 m-auto">
           <div className="lg:w-4xl">
@@ -154,7 +154,7 @@ export default function RestaurantMarketingHero() {
         </div>
       </section>
 
-      <section className="flex flex-col lg:flex-row items-center text-center rounded-2xl p-8 bg-secondary">
+      <section className="flex flex-col lg:flex-row items-center text-center rounded-2xl p-8 bg-linear-to-t from-secondary to-transparent to-85%">
         <div className="md:w-md lg:w-1/2 mb-8 lg:mb-0 lg:text-start">
           <span className={title({ size: "sm", class: "font-bold" })}>
             Results That Speak For Themselves
