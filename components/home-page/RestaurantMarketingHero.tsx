@@ -54,7 +54,7 @@ export default function RestaurantMarketingHero() {
         </div>
       </section>
 
-      <section className="flex flex-col w-full gap-12 lg:p-8 mt-4">
+      <section className="flex flex-col w-full gap-4 lg:p-8 mt-4">
         <div className="flex flex-col items-center justify-center gap-2 m-auto md:w-md">
           <span className={title({ size: "sm", class: "font-bold" })}>
             Why Select Us?

@@ -2,7 +2,7 @@
 
 import { button as buttonStyles } from "@heroui/theme";
 
-export default function CTAButton() {
+export default function CTAContact() {
   return (
     <button
       className={buttonStyles({

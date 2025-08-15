@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import RestaurantMarketingHero from "@/components/home-page/RestaurantMarketingHero";
 import SucceedOnline from "@/components/home-page/SucceedOnline";
 import ChoosePlan from "@/components/home-page/ChoosePLan";
+import CTAPlans from "@/components/home-page/CTA-Plan";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -165,8 +166,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Problem and Solution Section */}
       <RestaurantMarketingHero />
+      <CTAPlans />
       <SucceedOnline />
       <ChoosePlan />
     </main>

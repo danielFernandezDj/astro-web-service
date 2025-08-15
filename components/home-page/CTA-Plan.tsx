@@ -1,0 +1,34 @@
+"use client";
+
+import { button as buttonStyles } from "@heroui/theme";
+import { title, subtitle } from "@/components/primitives";
+
+export default function CTAPlans() {
+  return (
+    <main>
+      <section className="flex flex-col md:flex-row md:items-center md:justify-evenly gap-4 p-4 bg-gradient-to-b md:bg-gradient-to-r from-secondary from-40 md:from-70% to-transparent text-center rounded-2xl">
+        <div className="p-2">
+          <span className={title({ size: "sm" })}>
+            Choose a Plan that's right for you
+          </span>
+          <span className={subtitle({ size: "md" })}>
+            Find your perfect balance of collaboration, performance, and support
+            with a 'US'.
+          </span>
+        </div>
+        <button
+          className={buttonStyles({
+            radius: "full",
+            variant: "shadow",
+            size: "lg",
+            color: "primary",
+            class:
+              "text-white font-bold transition duration-300 hover:-translate-y-1 px-8",
+          })}
+        >
+          Find pricing {"->"}
+        </button>
+      </section>
+    </main>
+  );
+}
