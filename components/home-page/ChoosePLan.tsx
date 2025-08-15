@@ -18,7 +18,7 @@ export default function ChoosePlan() {
     <main className="flex flex-col items-center text-center py-8 md:gap-4">
       {/* Header */}
       <section>
-        <span className={title({ size: "sm" })}>Choose Your Success Plan</span>
+        <span className={title({ size: "sm" })}>Choose Your <br className="md:hidden"/> Success Plan</span>
         <span className={subtitle({ size: "sm" })}>
           Flexible options designed to fit your restaurant's needs and budget.
         </span>
@@ -26,7 +26,7 @@ export default function ChoosePlan() {
 
       {/* Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 mt-8 place-items-end">
-        <div className="flex flex-col items-center gap-6 bg-white rounded-2xl p-8 shadow-lg">
+        <div className="flex flex-col items-center gap-6 bg-white rounded-2xl p-4 w-full shadow-lg">
           <div className="flex flex-col text-center m-auto md:w-80 gap-2">
             <span className={title({ size: "sm" })}>Launch Package</span>
             <span className={subtitle({ size: "sm" })}>
@@ -36,7 +36,7 @@ export default function ChoosePlan() {
           <ul className="flex flex-col gap-4">
             <span className="text-gray-600 flex text-start gap-2">
               {" "}
-              <CircleCheckIn className="text-success" /> Professional food <br className="md:hidden"/>
+              <CircleCheckIn className="text-success" /> Professional food <br className="lg:hidden"/>
               photography session
             </span>
             <span className="text-gray-600 flex gap-2">
@@ -68,7 +68,7 @@ export default function ChoosePlan() {
               Most Popular
             </span>
           </div>
-          <div className="flex flex-col items-center bg-white rounded-2xl p-8 shadow-lg border-4 border-secondary">
+          <div className="flex flex-col items-center bg-white rounded-2xl p-4 shadow-lg border-4 border-secondary">
             <div className="flex flex-col m-auto gap-6 text-center w-full">
               <div className="flex flex-col text-center m-auto md:w-80 gap-2">
                 <span className={title({ size: "sm" })}>Growth Plan</span>
@@ -76,19 +76,19 @@ export default function ChoosePlan() {
                   Complete digital transformation with advanced features
                 </span>
               </div>
-              <ul className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-4 text-start">
                 {" "}
-                <span className="text-gray-600 flex gap-2 text-start">
-                  <CircleCheckIn size={28} className="text-success" />
-                  Extended photography session
+                <span className="text-gray-600 flex gap-2 ">
+                  <CircleCheckIn size={24} className="text-success" />
+                  Extended photography <br className="lg:hidden"/> session
                 </span>
-                <span className="text-gray-600 flex gap-2 text-start">
-                  <CircleCheckIn size={32} className="text-success" />
-                  Premium menu design & optimization
+                <span className="text-gray-600 flex gap-2 ">
+                  <CircleCheckIn size={24} className="text-success" />
+                  Premium menu design <br className="lg:hidden"/> & optimization
                 </span>
-                <span className="text-gray-600 flex gap-2 text-start">
-                  <CircleCheckIn size={28} className="text-success" />
-                  Full website with online ordering
+                <span className="text-gray-600 flex gap-2 ">
+                  <CircleCheckIn size={24} className="text-success" />
+                  Full website with online <br className="lg:hidden"/> ordering
                 </span>
                 <span className="text-gray-600 flex gap-2">
                   <CircleCheckIn className="text-success" />
