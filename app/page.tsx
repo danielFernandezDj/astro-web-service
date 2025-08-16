@@ -9,6 +9,7 @@ import SucceedOnline from "@/components/home-page/SucceedOnline";
 import ChoosePlan from "@/components/home-page/ChoosePLan";
 import CTAPlans from "@/components/home-page/CTA-Plan";
 import TimerCounter from "@/components/home-page/TimerCounter";
+import DigitalShowcase from "@/components/home-page/DigitalShowcase";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -172,6 +173,7 @@ export default function Home() {
       <SucceedOnline />
       <ChoosePlan />
       <TimerCounter />
+      <DigitalShowcase />
     </main>
   );
 }
