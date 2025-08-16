@@ -53,6 +53,7 @@ export const subtitle = tv({
       sm: "text-sm lg:text-base",
       md: "text-base lg:text-lg",
       lg: "text-lg lg:text-xl",
+      xl: "text-xl, lg:text-2xl",
     },
   },
   defaultVariants: {
