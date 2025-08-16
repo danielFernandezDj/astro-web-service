@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { button as buttonStyles } from "@heroui/theme";
 import { title, subtitle } from "@/components/primitives";
+import Image from "next/image";
 
 export default function CTAPlans() {
   // Define the target date
@@ -40,21 +41,23 @@ export default function CTAPlans() {
   const formatNumber = (num: number) => num.toString().padStart(2, "0");
 
   return (
-    <main>
-      <section className="flex flex-col items-center md:text-center gap-4 p-4 md:p-16 w-full rounded-2xl bg-primary">
-        <div className="flex flex-col text-start md:text-center w-full lg:w-4xl m-auto">
-          <span className={title({ size: "md", class: "text-white" })}>
+    <main className="grid md:grid-cols-2 pb-4 bg-primary rounded-2xl border-red-600">
+      <section className="flex flex-col items-center md:text-center gap-4 p-4 md:p-16 w-full rounded-2xl">
+        <div className="flex flex-col text-center md:text-center m-auto">
+          <span className={title({ size: "md", class: "text-white -mb-2" })}>
             Get a <span className="text-secondary">Free </span>{" "}
             <br className="md:hidden" />
             Custom Video
           </span>
-          <span className={subtitle({ size: "xl", class: "text-gray-100 text" })}>
+          <span
+            className={subtitle({ size: "xl", class: "text-gray-100 text" })}
+          >
             when you book before:
           </span>
         </div>
 
         <div className="flex flex-col gap-2">
-          <div className="flex flex-wrap justify-center gap-4 ">
+          <div className="flex lg:flex-wrap justify-center gap-4 ">
             <div className="bg-white rounded-xl p-4 shadow-lg min-w-[80px] flex flex-col items-center">
               <div className="text-3xl md:text-4xl font-bold text-error">
                 {formatNumber(timeLeft.days)}
@@ -82,7 +85,7 @@ export default function CTAPlans() {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl p-4 shadow-lg min-w-[80px] hidden md:flex flex-col items-center">
+            <div className="bg-white rounded-xl p-4 shadow-lg min-w-[80px] hidden lg:flex flex-col items-center">
               <div className="text-3xl md:text-4xl font-bold text-error">
                 {formatNumber(timeLeft.seconds)}
               </div>
@@ -91,7 +94,19 @@ export default function CTAPlans() {
               </div>
             </div>
           </div>
-          <div className="md:w-lg m-auto">
+          {/* Image */}
+          <div className="md:hidden mt-2">
+            <Image
+              src={"/videographer.png"}
+              alt="Photographer Image"
+              className="rounded-xl border-4 "
+              priority
+              width={1000}
+              height={1000}
+            />
+          </div>
+          {/* Subtext */}
+          <div className="lg:w-md m-auto">
             <span className={subtitle({ size: "md", class: "text-gray-100" })}>
               From a powerful website to optimized online visibility – we help
               restaurants grow with clarity, care, and confidence.
@@ -110,6 +125,16 @@ export default function CTAPlans() {
         >
           Get your free consultation {"->"}
         </button>
+      </section>
+
+      <section className="p-4 hidden md:inline-block">
+        <Image
+          src={"/videographer.png"}
+          alt="Photographer Image"
+          className="rounded-xl border-4 object-cover w-full h-full"
+          width={1500}
+          height={1500}
+        />
       </section>
     </main>
   );
