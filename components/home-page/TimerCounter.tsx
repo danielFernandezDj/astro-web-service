@@ -41,8 +41,8 @@ export default function CTAPlans() {
   const formatNumber = (num: number) => num.toString().padStart(2, "0");
 
   return (
-    <main className="grid md:grid-cols-2 pb-4 bg-primary rounded-2xl border-red-600">
-      <section className="flex flex-col items-center md:text-center gap-4 p-4 md:p-16 w-full rounded-2xl">
+    <main className="grid md:grid-cols-2 py-8 md:p-0 bg-primary rounded-2xl border-red-600">
+      <section className="flex flex-col items-center md:text-center gap-4 p-2 md:p-16 w-full rounded-2xl">
         <div className="flex flex-col text-center md:text-center m-auto">
           <span className={title({ size: "md", class: "text-white -mb-2" })}>
             Get a <span className="text-secondary">Free </span>{" "}

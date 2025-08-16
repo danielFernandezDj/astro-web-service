@@ -20,12 +20,12 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-};
+// export const viewport: Viewport = {
+//   themeColor: [
+//     { media: "(prefers-color-scheme: light)", color: "white" },
+//     { media: "(prefers-color-scheme: dark)", color: "black" },
+//   ],
+// };
 
 export default function RootLayout({
   children,
@@ -47,7 +47,7 @@ export default function RootLayout({
             <main className="container mx-auto max-w-7xl px-6 flex-grow">
               {children}
             </main>
-            <footer className="w-full flex items-center justify-center py-3  bg-background">
+            <footer className="w-full flex items-center justify-center py-3 bg-background">
               <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
