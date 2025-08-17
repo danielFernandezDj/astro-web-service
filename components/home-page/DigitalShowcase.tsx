@@ -261,7 +261,7 @@ export default function AstroWebServicesShowcase() {
 
         {/* Services Grid - 4 cards on mobile, 9 cards on larger screens */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+          {visibleServices.map((service, index) => (
             <ServiceCard
               key={service.id}
               service={service}
@@ -272,9 +272,9 @@ export default function AstroWebServicesShowcase() {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
+          <div className="flex justify-center items-center gap-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
             <span className="font-semibold text-lg">
-              Start Your Project Today
+              Get Started
             </span>
             <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
           </div>
