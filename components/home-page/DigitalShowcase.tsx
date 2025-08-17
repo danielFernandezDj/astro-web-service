@@ -1,5 +1,7 @@
 "use client";
 
+import { useMediaQuery } from "react-responsive";
+
 import {
   Code,
   Menu,
@@ -230,6 +232,17 @@ export default function AstroWebServicesShowcase() {
     "bg-red-50",
   ];
 
+  const isSm = useMediaQuery({ maxWidth: 639 });
+  const isMd = useMediaQuery({ minWidth: 640, maxWidth: 1023 });
+  const isLg = useMediaQuery({ minWidth: 1024 });
+
+  let visibleServices = services;
+  if (isSm) {
+    visibleServices = services.slice(0, 4);
+  } else if (isMd) {
+    visibleServices = services.slice(0, 6);
+  } 
+
   return (
     <div className="min-h-screen bg-white rounded-2xl py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -247,29 +260,7 @@ export default function AstroWebServicesShowcase() {
         </div>
 
         {/* Services Grid - 4 cards on mobile, 9 cards on larger screens */}
-        <div className="md:hidden grid grid-cols-2 gap-6">
-          {services.slice(0, 4).map((service, index) => (
-            <ServiceCard
-              key={service.id}
-              service={service}
-              bgColor={cardColors[index % cardColors.length]}
-            />
-          ))}
-        </div>
-
-          //! FOR SOME REASON THE 'MD & LG' SCREEN SIZE APER IN THE 'SM'. –––––––––––––––––––––––––––––––––
-        {/* 'md' screen size  */}
-        <div className="sm:hidden lg:hidden md:grid md:grid-cols-2 gap-6">
-          {services.slice(0, 6).map((service, index) => (
-            <ServiceCard
-              key={service.id}
-              service={service}
-              bgColor={cardColors[index % cardColors.length]}
-            />
-          ))}
-        </div>
-        {/* 'lg' screen size */}
-        <div className="sm:hidden lg:inline-block grid grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <ServiceCard
               key={service.id}
@@ -278,7 +269,6 @@ export default function AstroWebServicesShowcase() {
             />
           ))}
         </div>
-        //! –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
         {/* Call to Action */}
         <div className="text-center mt-16">

@@ -15,7 +15,7 @@ const config = {
       },
       colors: {
         primary: "#122243", // Dark Blue
-        secondary: "#FBBF24", // Yellow
+        secondary: "#FFBB08", // Yellow
         accent: "#38BDF8", // Light Blue
         background: "#F7F5F2", // Light Gray 
         success: "#2A8703", // Green
