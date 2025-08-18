@@ -1,5 +1,13 @@
 "use client";
 
+import { Form } from "@heroui/form";
+import { Input } from "@heroui/input";
+import { Button } from "@heroui/button";
+import { Snippet } from "@heroui/snippet";
+import { title, subtitle } from "@/components/primitives";
+import Image from "next/image";
+import Link from "next/link";
+import { button as buttonStyles } from "@heroui/theme";
 import { useMediaQuery } from "react-responsive";
 
 import {
@@ -74,7 +82,7 @@ const ServiceCard = ({ service, bgColor = "bg-gray-50" }: ServiceCardProps) => {
         ))}
       </ul>
 
-      <button className="w-full bg-gradient-to-r relative bottom- border-2-4 from-blue-600 to-purple-600 text-white py-2.5 px-4 rounded-lg font-medium hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm">
+      <button className="w-full border border-primary text-primary hover:bg-secondary py-2.5 px-4 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm">
         {service.ctaLabel}
       </button>
     </div>
@@ -241,24 +249,26 @@ export default function AstroWebServicesShowcase() {
     visibleServices = services.slice(0, 4);
   } else if (isMd) {
     visibleServices = services.slice(0, 6);
-  } 
+  }
 
   return (
-    <div className="min-h-screen bg-white rounded-2xl py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <main className="min-h-screen bg-white rounded-2xl py-8 md:py-16 px-2 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="md:text-center p-2 mb-8 md:mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Digital Web Services
           </h1>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Astro Web Services specializes in creating beautiful, functional,
-            and conversion-focused websites for restaurants. From menu redesigns
-            to SEO and ongoing maintenance, we help your restaurant stand out
-            online and keep customers coming back.
+            and conversion-focused websites for restaurants.{" "}
+            <span className="hidden md:inline-block">
+              {" "}
+              From menu redesigns to SEO and ongoing maintenance, we help your
+              restaurant stand out online and keep customers coming back.
+            </span>
           </p>
         </div>
-
         {/* Services Grid - 4 cards on mobile, 9 cards on larger screens */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibleServices.map((service, index) => (
@@ -271,15 +281,69 @@ export default function AstroWebServicesShowcase() {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="flex justify-center items-center gap-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
-            <span className="font-semibold text-lg">
-              Get Started
-            </span>
-            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+        <div className="border rounded-2xl md:p-4 mt-8">
+          {/* Header */}
+          <div className="grid grid-cols-1 md:grid-cols-2 place-items-center gap-4 ">
+            <div className="flex flex-col justify-center gap-4 md:p-4 py-8 m-auto">
+              <span className={title({ size: "md", class: "px-2" })}>
+                READY TO GROW YOUR BUSINESS?
+              </span>
+              <div className="px-2 md:hidden">
+                <Image
+                  src={"/hero-img-corp.png"}
+                  alt="Hero Image"
+                  className="rounded-lg"
+                  priority
+                  width={500}
+                  height={500}
+                />
+              </div>
+              <span className={subtitle({ size: "md", class: "px-2 -mt-2" })}>
+                If you’re looking for the best marketing agency that delivers
+                real results — not just clicks and impressions — you’re in the
+                right place.{" "}
+                <span className="hidden md:inline-block">
+                  Contact us today to work with a results-driven digital
+                  marketing agency.
+                </span>
+              </span>
+              <div className="flex flex-col md:flex-row items-center gap-2">
+                <Link
+                  className={`${buttonStyles({
+                    radius: "full",
+                    size: "lg",
+                  })} text-primary bg-secondary border border-secondary hover:border-black`}
+                  href="https://calendly.com/daniel-astrowebservice/30min"
+                  target="_blank"
+                >
+                  GET MY FREE CONSULTATION
+                </Link>
+                <p className="text-xl font-medium">or</p>
+                <Snippet
+                  symbol=""
+                  className={`${buttonStyles({
+                    radius: "full",
+                    size: "lg",
+                  })} border-2 hover:cursor-auto border-primary bg-transparent`}
+                >
+                  Call (702) 334-523
+                </Snippet>
+              </div>
+            </div>
+
+            <div className="p-2 md:p-0 hidden lg:inline-block">
+              <Image
+                src={"/hero-img-corp.png"}
+                alt="Hero Image"
+                className="rounded-lg"
+                priority
+                width={500}
+                height={500}
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
