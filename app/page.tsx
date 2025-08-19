@@ -169,8 +169,8 @@ export default function Home() {
       </section>
 
       <RestaurantMarketingHero />
-      <CTAPlans />
       <SucceedOnline />
+      <CTAPlans />
       <ChoosePlan />
       <TimerCounter />
       <DigitalShowcase />
