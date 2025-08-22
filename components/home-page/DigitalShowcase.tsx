@@ -259,14 +259,9 @@ export default function AstroWebServicesShowcase() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Our Digital Web Services
           </h1>
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:w-md text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Astro Web Services specializes in creating beautiful, functional,
-            and conversion-focused websites for restaurants.{" "}
-            <span className="hidden md:inline-block">
-              {" "}
-              From menu redesigns to SEO and ongoing maintenance, we help your
-              restaurant stand out online and keep customers coming back.
-            </span>
+            and conversion-focused websites for restaurants.
           </p>
         </div>
         {/* Services Grid - 4 cards on mobile, 9 cards on larger screens */}
