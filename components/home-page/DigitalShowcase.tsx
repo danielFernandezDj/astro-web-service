@@ -315,15 +315,10 @@ export default function AstroWebServicesShowcase() {
                   GET MY FREE CONSULTATION
                 </Link>
                 <p className="text-xl font-medium">or</p>
-                <Snippet
-                  symbol=""
-                  className={`${buttonStyles({
-                    radius: "full",
-                    size: "lg",
-                  })} border-2 hover:cursor-auto border-primary bg-transparent`}
-                >
-                  Call (702) 334-523
-                </Snippet>
+                <div className="flex justify-center items-center px-2 py-1 border hover:cursor-auto rounded-full border-primary bg-transparent">
+                  <p className="">Call </p>
+                  <Snippet symbol="" className="bg-transparent -py-0">(702) 334-523</Snippet>
+                </div>
               </div>
             </div>
 
