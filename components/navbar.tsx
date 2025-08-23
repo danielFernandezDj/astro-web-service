@@ -15,6 +15,7 @@ import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+import { Snippet } from "@heroui/snippet";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -60,9 +61,13 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2"></NavbarItem>
-        <Link className="text-sm text-primary hover:cursor-pointer hover:underline decoration-solid">
-          1+(702) 334-523
-        </Link>
+        <div className="flex justify-center items-center">
+          <p className="text-sm text-primary -mr-2">1+</p>
+          <Snippet symbol="" className="bg-transparent">
+            <p className="text-sm text-primary">(702) 334-523</p>
+          </Snippet>
+          <span className="border-3 border-gray-300 rounded-2xl" />
+        </div>
         {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
         <NavbarItem className="hidden md:flex">
           <Button
@@ -85,9 +90,11 @@ export const Navbar = () => {
         className="md:hidden basis-1 pl-4 text-black"
         justify="end"
       >
-        <Link className="md:hidden text-xs text-primary hover:cursor-pointer hover:underline decoration-solid">
-          1+(702) 334-523
-        </Link>
+        <Snippet symbol="" className="bg-transparent -m-4">
+          <p className="md:hidden text-xs text-primary hover:cursor-pointer hover:underline decoration-solid">
+            1+(702) 334-523
+          </p>
+        </Snippet>
         {/* <Link isExternal aria-label="Github" href={siteConfig.links.github}>
           <GithubIcon className="text-default-500" />
         </Link> */}
