@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import { button as buttonStyles } from "@heroui/theme";
 import { title, subtitle } from "@/components/primitives";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CTAPlans() {
+  const calendly = "https://calendly.com/daniel-astrowebservice/30min";
+
   // Define the target date
   const targetDate = new Date("2025-08-30T00:00:00");
 
@@ -113,18 +116,20 @@ export default function CTAPlans() {
             </span>
           </div>
         </div>
-        <button
-          className={buttonStyles({
-            radius: "full",
-            variant: "shadow",
-            size: "lg",
-            color: "secondary",
-            class:
-              "text-primary m-auto font-bold transition duration-300 hover:-translate-y-1 px-8",
-          })}
-        >
-          Get your free consultation {"->"}
-        </button>
+        <Link href={calendly} target="_blank">
+          <button
+            className={buttonStyles({
+              radius: "full",
+              variant: "shadow",
+              size: "lg",
+              color: "secondary",
+              class:
+                "text-primary m-auto font-bold transition duration-300 hover:-translate-y-1 px-8",
+            })}
+          >
+            Get your free consultation {"->"}
+          </button>
+        </Link>
       </section>
 
       <section className="p-4 hidden md:inline-block">

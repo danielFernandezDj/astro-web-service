@@ -8,6 +8,8 @@ import { button as buttonStyles } from "@heroui/theme";
 import { CircleCheckIn } from "@/components/icons";
 
 export default function ChoosePlan() {
+  const calendly = "https://calendly.com/daniel-astrowebservice/30min";
+
   const button = buttonStyles({
     color: "secondary",
     radius: "full",
@@ -75,7 +77,7 @@ export default function ChoosePlan() {
               Basic website design
             </span>
           </ul>
-          <Link href={""}>
+          <Link href={calendly} target="_blank">
             <button className={button}>Get Started</button>
           </Link>
         </div>
@@ -144,7 +146,7 @@ export default function ChoosePlan() {
                   Brand development
                 </span>
               </ul>
-              <Link href={""}>
+              <Link href={calendly} target="_blank">
                 <button className={button}>Get Started</button>
               </Link>
             </div>
@@ -193,7 +195,7 @@ export default function ChoosePlan() {
               Content creation
             </span>
           </ul>
-          <Link href={""}>
+          <Link href={calendly} target="_blank">
             <button className={button}>Get Started</button>
           </Link>
         </div>

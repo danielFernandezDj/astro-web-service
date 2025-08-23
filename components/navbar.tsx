@@ -17,14 +17,20 @@ import NextLink from "next/link";
 import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch  } from "@/components/theme-switch";
+import { ThemeSwitch } from "@/components/theme-switch";
 import { Logo, RocketIcon } from "@/components/icons";
 
 export const Navbar = () => {
+  const calendly = "https://calendly.com/daniel-astrowebservice/30min";
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <HeroUINavbar maxWidth="xl" position="sticky" isMenuOpen={menuOpen} onMenuOpenChange={setMenuOpen}>
+    <HeroUINavbar
+      maxWidth="xl"
+      position="sticky"
+      isMenuOpen={menuOpen}
+      onMenuOpenChange={setMenuOpen}
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
@@ -63,7 +69,7 @@ export const Navbar = () => {
             isExternal
             as={Link}
             className="text-sm font-normal bg-secondary text-default-600 rounded-full"
-            href={siteConfig.links.sponsor}
+            href={calendly}
             startContent={<RocketIcon size={16} />}
           >
             Get Started
@@ -75,7 +81,10 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="md:hidden basis-1 pl-4 text-black" justify="end">
+      <NavbarContent
+        className="md:hidden basis-1 pl-4 text-black"
+        justify="end"
+      >
         <Link className="md:hidden text-xs text-primary hover:cursor-pointer hover:underline decoration-solid">
           1+(702) 334-523
         </Link>
@@ -90,7 +99,11 @@ export const Navbar = () => {
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link href={item.href} size="lg" onClick={() => setMenuOpen(false)}>
+              <Link
+                href={item.href}
+                size="lg"
+                onClick={() => setMenuOpen(false)}
+              >
                 {item.label}
               </Link>
             </NavbarMenuItem>
@@ -100,7 +113,7 @@ export const Navbar = () => {
           isExternal
           as={Link}
           className="md:hidden text-md text-black font-normal px-10 mt-4 bg-secondary rounded-2xl"
-          href={siteConfig.links.sponsor}
+          href={calendly}
           startContent={<RocketIcon size={16} />}
         >
           Get Started

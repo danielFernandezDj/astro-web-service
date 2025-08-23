@@ -11,7 +11,6 @@ import CTAPlans from "@/components/home-page/CTA-Plan";
 import TimerCounter from "@/components/home-page/TimerCounter";
 import DigitalShowcase from "@/components/home-page/DigitalShowcase";
 
-import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import {
   CircleCheckIn,
@@ -22,6 +21,8 @@ import {
 import Image from "next/image";
 
 export default function Home() {
+  const calendly = "https://calendly.com/daniel-astrowebservice/30min";
+
   return (
     <main className="flex flex-col gap-24">
       {/* Hero */}
@@ -79,7 +80,7 @@ export default function Home() {
                 radius: "full",
                 size: "lg",
               })} px-8 bg-secondary text-primary`}
-              href={siteConfig.links.docs}
+              href={calendly}
             >
               Get Started
             </Link>

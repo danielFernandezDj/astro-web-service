@@ -90,6 +90,7 @@ const ServiceCard = ({ service, bgColor = "bg-gray-50" }: ServiceCardProps) => {
 };
 
 export default function AstroWebServicesShowcase() {
+  const calendly = "https://calendly.com/daniel-astrowebservice/30min";
   const services: Service[] = [
     {
       id: "restaurant-web-design",
@@ -308,7 +309,7 @@ export default function AstroWebServicesShowcase() {
                     radius: "full",
                     size: "lg",
                   })} text-primary bg-secondary border border-secondary hover:border-black`}
-                  href="https://calendly.com/daniel-astrowebservice/30min"
+                  href={calendly}
                   target="_blank"
                 >
                   GET MY FREE CONSULTATION
