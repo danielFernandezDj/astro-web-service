@@ -18,10 +18,19 @@ export default function ChoosePlan() {
     <main className="flex flex-col items-center text-center py-8 md:gap-4">
       {/* Header */}
       <section>
-        <span className={title({ size: "sm" })}>Choose Your <br className="md:hidden"/> Success Plan</span>
+        <span className={title({ size: "sm" })}>
+          Choose Your <br className="md:hidden" /> Success Plan
+        </span>
         <span className={subtitle({ size: "sm" })}>
           Flexible options designed to fit your restaurant's needs and budget.
+          All prices are starting points and can be customized.
         </span>
+        {/* Savings Notice */}
+        <div className="mt-6 mb-8">
+          <p className="text-lg font-semibold text-error">
+            💰 Save 20% with one-time payment instead of monthly plans!
+          </p>
+        </div>
       </section>
 
       {/* Cards */}
@@ -32,11 +41,25 @@ export default function ChoosePlan() {
             <span className={subtitle({ size: "sm" })}>
               Perfect for getting started with professional basics
             </span>
+            {/* Price Display */}
+            <div className="my-4">
+              <div className="flex items-end justify-center">
+                <span className="text-lg text-gray-500 mr-1">Starting at</span>
+                <span className="text-4xl font-bold text-gray-900">$349</span>
+                <span className="text-gray-600 ml-1 mb-1">/month</span>
+              </div>
+              <div className="mt-1">
+                <span className="text-gray-600 text-sm">
+                  Or $3,500 one-time payment
+                </span>
+              </div>
+            </div>
           </div>
           <ul className="flex flex-col gap-4">
             <span className="text-gray-600 flex text-start gap-2">
               {" "}
-              <CircleCheckIn className="text-success" /> Professional food <br className="lg:hidden"/>
+              <CircleCheckIn className="text-success" /> Professional food{" "}
+              <br className="lg:hidden" />
               photography session
             </span>
             <span className="text-gray-600 flex gap-2">
@@ -75,20 +98,38 @@ export default function ChoosePlan() {
                 <span className={subtitle({ size: "sm" })}>
                   Complete digital transformation with advanced features
                 </span>
+                {/* Price Display */}
+                <div className="my-4">
+                  <div className="flex items-end justify-center">
+                    <span className="text-lg text-gray-500 mr-1">
+                      Starting at
+                    </span>
+                    <span className="text-4xl font-bold text-gray-900">
+                      $599
+                    </span>
+                    <span className="text-gray-600 ml-1 mb-1">/month</span>
+                  </div>
+                  <div className="mt-1">
+                    <span className="text-gray-600 text-sm">
+                      Or $6,000 one-time payment
+                    </span>
+                  </div>
+                </div>
               </div>
               <ul className="flex flex-col gap-4 text-start">
                 {" "}
                 <span className="text-gray-600 flex gap-2 ">
                   <CircleCheckIn size={24} className="text-success" />
-                  Extended photography <br className="lg:hidden"/> session
+                  Extended photography <br className="lg:hidden" /> session
                 </span>
                 <span className="text-gray-600 flex gap-2 ">
                   <CircleCheckIn size={24} className="text-success" />
-                  Premium menu design <br className="lg:hidden"/> & optimization
+                  Premium menu design <br className="lg:hidden" /> &
+                  optimization
                 </span>
                 <span className="text-gray-600 flex gap-2 ">
                   <CircleCheckIn size={24} className="text-success" />
-                  Full website with online <br className="lg:hidden"/> ordering
+                  Full website with online <br className="lg:hidden" /> ordering
                 </span>
                 <span className="text-gray-600 flex gap-2">
                   <CircleCheckIn className="text-success" />
@@ -116,6 +157,19 @@ export default function ChoosePlan() {
             <span className={subtitle({ size: "sm" })}>
               Ongoing updates and support to keep you fresh
             </span>
+            {/* Price Display */}
+            <div className="my-4">
+              <div className="flex items-end justify-center">
+                <span className="text-lg text-gray-500 mr-1">Starting at</span>
+                <span className="text-4xl font-bold text-gray-900">$299</span>
+                <span className="text-gray-600 ml-1 mb-1">/month</span>
+              </div>
+              <div className="mt-1">
+                <span className="text-gray-600 text-sm">
+                  Ongoing maintenance & support
+                </span>
+              </div>
+            </div>
           </div>
           <ul className="flex flex-col md:flex-row md:flex-wrap justify-center gap-4 md:w-2xl m-auto">
             <span className="text-gray-600 flex gap-2">

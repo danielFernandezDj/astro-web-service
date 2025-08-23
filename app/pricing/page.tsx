@@ -1,19 +1,12 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { title, subtitle } from "@/components/primitives";
 import Image from "next/image";
 import Link from "next/link";
 import { button as buttonStyles } from "@heroui/theme";
 import { 
-  Switch,
-  Chip,
-  Divider
-} from '@heroui/react';
-import { 
-  Globe, 
-  Camera,
-  Headphones
+  Globe
 } from 'lucide-react';
 import { CircleCheckIn } from "@/components/icons";
 
@@ -26,10 +19,6 @@ interface PricingPlan {
   id: string;
   name: string;
   description: string;
-  price: {
-    monthly: number;
-    yearly: number;
-  };
   popular?: boolean;
   premium?: boolean;
   features: PlanFeature[];
@@ -37,8 +26,6 @@ interface PricingPlan {
 }
 
 const PricingPage: React.FC = () => {
-  const [isYearly, setIsYearly] = useState<boolean>(false);
-
   const button = buttonStyles({
     color: "secondary",
     radius: "full",
@@ -50,10 +37,6 @@ const PricingPage: React.FC = () => {
       id: 'launch',
       name: 'Launch Package',
       description: 'Perfect for getting started with professional basics',
-      price: {
-        monthly: 3500, // One-time setup cost
-        yearly: 3200   // Discounted one-time if paid upfront
-      },
       buttonText: 'Get Started',
       features: [
         { name: 'Professional food photography session', included: true },
@@ -69,10 +52,6 @@ const PricingPage: React.FC = () => {
       id: 'growth',
       name: 'Growth Plan',
       description: 'Complete digital transformation with advanced features',
-      price: {
-        monthly: 6000, // One-time enhanced setup cost
-        yearly: 5500   // Discounted one-time if paid upfront
-      },
       popular: true,
       buttonText: 'Get Started',
       features: [
@@ -90,10 +69,6 @@ const PricingPage: React.FC = () => {
       id: 'monthly-care',
       name: 'Monthly Care',
       description: 'Ongoing updates and support to keep you fresh',
-      price: {
-        monthly: 299,  // Monthly recurring
-        yearly: 2990   // Annual plan (save ~17%)
-      },
       premium: true,
       buttonText: 'Get Started',
       features: [
@@ -108,31 +83,21 @@ const PricingPage: React.FC = () => {
     }
   ];
 
-  const getCurrentPrice = (plan: PricingPlan): number => {
-    return isYearly ? plan.price.yearly : plan.price.monthly;
-  };
-
-  const getSavings = (plan: PricingPlan): number => {
-    const monthlyTotal = plan.price.monthly * 12;
-    const yearlyPrice = plan.price.yearly;
-    return monthlyTotal - yearlyPrice;
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* Header */}
-      <div className="bg-white shadow-sm border-b">
+      {/* <div className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-center">
             <div className="flex items-center space-x-2">
               <Globe className="w-8 h-8 text-warning-500" />
               <span className="text-2xl font-bold bg-gradient-to-r from-warning-500 to-warning-600 bg-clip-text text-transparent">
-                Atro
+                Astro
               </span>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <main className="flex flex-col items-center text-center py-8 md:gap-4">
         {/* Header Section */}
@@ -145,23 +110,11 @@ const PricingPage: React.FC = () => {
             All prices are starting points and can be customized.
           </span>
           
-          {/* Billing Toggle */}
-          <div className="flex items-center justify-center space-x-4 mt-8 mb-12">
-            <span className={`text-lg font-medium ${!isYearly ? 'text-warning-600' : 'text-gray-500'}`}>
-              One-time Payment
-            </span>
-            <Switch
-              isSelected={isYearly}
-              onValueChange={setIsYearly}
-              color="warning"
-              size="lg"
-            />
-            <span className={`text-lg font-medium ${isYearly ? 'text-warning-600' : 'text-gray-500'}`}>
-              {plans.find(p => p.id === 'monthly-care') ? 'Annual Plans' : 'Monthly Plans'}
-            </span>
-            <Chip color="success" variant="flat" className="ml-2">
-              {isYearly ? 'Save More' : 'One-time Setup'}
-            </Chip>
+          {/* Savings Notice */}
+          <div className="mt-6 mb-8">
+            <p className="text-lg font-semibold text-error">
+              💰 Save 20% with one-time payment instead of monthly plans!
+            </p>
           </div>
         </section>
 
@@ -180,19 +133,15 @@ const PricingPage: React.FC = () => {
                 <div className="flex items-end justify-center">
                   <span className="text-lg text-gray-500 mr-1">Starting at</span>
                   <span className="text-4xl font-bold text-gray-900">
-                    ${getCurrentPrice(plans[0]).toLocaleString()}
+                    $350
                   </span>
+                  <span className="text-gray-600 ml-1 mb-1">/month</span>
                 </div>
                 <div className="mt-1">
-                  <span className="text-gray-600">
-                    {isYearly ? 'Annual Payment' : 'One-time Setup'}
+                  <span className="text-gray-600 text-sm">
+                    Or $3,500 one-time payment
                   </span>
                 </div>
-                {isYearly && (
-                  <p className="text-success-600 text-sm mt-1">
-                    Save ${getSavings(plans[0])} with upfront payment
-                  </p>
-                )}
               </div>
             </div>
 
@@ -230,19 +179,15 @@ const PricingPage: React.FC = () => {
                     <div className="flex items-end justify-center">
                       <span className="text-lg text-gray-500 mr-1">Starting at</span>
                       <span className="text-4xl font-bold text-gray-900">
-                        ${getCurrentPrice(plans[1]).toLocaleString()}
+                        $600
                       </span>
+                      <span className="text-gray-600 ml-1 mb-1">/month</span>
                     </div>
                     <div className="mt-1">
-                      <span className="text-gray-600">
-                        {isYearly ? 'Annual Payment' : 'One-time Setup'}
+                      <span className="text-gray-600 text-sm">
+                        Or $6,000 one-time payment
                       </span>
                     </div>
-                    {isYearly && (
-                      <p className="text-success-600 text-sm mt-1">
-                        Save ${getSavings(plans[1])} with upfront payment
-                      </p>
-                    )}
                   </div>
                 </div>
 
@@ -275,19 +220,15 @@ const PricingPage: React.FC = () => {
                 <div className="flex items-end justify-center">
                   <span className="text-lg text-gray-500 mr-1">Starting at</span>
                   <span className="text-4xl font-bold text-gray-900">
-                    ${getCurrentPrice(plans[2]).toLocaleString()}
+                    $299
                   </span>
+                  <span className="text-gray-600 ml-1 mb-1">/month</span>
                 </div>
                 <div className="mt-1">
-                  <span className="text-gray-600">
-                    {isYearly ? '/year' : '/month'}
+                  <span className="text-gray-600 text-sm">
+                    Ongoing maintenance & support
                   </span>
                 </div>
-                {isYearly && getSavings(plans[2]) > 0 && (
-                  <p className="text-success-600 text-sm mt-1">
-                    Save ${getSavings(plans[2])} per year
-                  </p>
-                )}
               </div>
             </div>
 
