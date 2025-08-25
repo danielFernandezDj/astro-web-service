@@ -32,18 +32,47 @@ export const Navbar = () => {
   const calendly = "https://calendly.com/daniel-astrowebservice/30min";
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Define your services dropdown items
+  // Services dropdown items
   const serviceItems = [
-    { key: "web-design", label: "Web Design", href: "/services/web-design" },
-    { key: "seo", label: "SEO Services", href: "/services/seo" },
     {
-      key: "maintenance",
-      label: "Website Maintenance",
+      key: "Development",
+      label: "Restaurant Website Design",
+      href: "/services/Web-Design-Development",
+    },
+    { key: "Optimization", label: "Menu Redesign", href: "/services/seo" },
+    {
+      key: "SEO",
+      label: "Restaurant SEO",
       href: "/services/maintenance",
     },
     {
-      key: "consulting",
-      label: "Digital Consulting",
+      key: "Production",
+      label: "Photography & Video",
+      href: "/services/consulting",
+    },
+    {
+      key: "Marketing",
+      label: "Social Media Marketing",
+      href: "/services/consulting",
+    },
+    {
+      key: "Online",
+      label: "Reputation Management",
+      href: "/services/consulting",
+    },
+    {
+      key: "CRO",
+      label: "Conversion Rate Optimization",
+      href: "/services/consulting",
+    },
+    {
+      key: "Delivery",
+      label: "Delivery Platform Integration",
+      href: "/services/consulting",
+    },
+    {
+      key: "Maintenance Plan",
+      label: "Monthly Care Plan",
       href: "/services/consulting",
     },
   ];
@@ -181,25 +210,15 @@ export const Navbar = () => {
                       key="1"
                       aria-label="Accordion 1"
                       title="Services"
-                      className="flex flex-col text-xl -m-2"
+                      className="flex flex-col -m-2"
                     >
-                      {/* <NavbarMenuItem>
-                        <Link
-                          href={item.href}
-                          size="lg"
-                          onClick={() => setMenuOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                      </NavbarMenuItem> */}
-
                       {/* Sub-menu items for mobile */}
                       {serviceItems.map((service) => (
-                        <NavbarMenuItem key={service.key} className="ml-4">
+                        <NavbarMenuItem key={service.key} className="ml-4 -mt-2">
                           <Link
                             href={service.href}
                             size="md"
-                            className="text-default-500"
+                            className="text-primary border-b border-gray-300 mb-4"
                             onClick={() => setMenuOpen(false)}
                           >
                             {service.label}
