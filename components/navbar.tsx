@@ -10,6 +10,7 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@heroui/navbar";
+import { Accordion, AccordionItem } from "@heroui/react";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
@@ -35,8 +36,16 @@ export const Navbar = () => {
   const serviceItems = [
     { key: "web-design", label: "Web Design", href: "/services/web-design" },
     { key: "seo", label: "SEO Services", href: "/services/seo" },
-    { key: "maintenance", label: "Website Maintenance", href: "/services/maintenance" },
-    { key: "consulting", label: "Digital Consulting", href: "/services/consulting" },
+    {
+      key: "maintenance",
+      label: "Website Maintenance",
+      href: "/services/maintenance",
+    },
+    {
+      key: "consulting",
+      label: "Digital Consulting",
+      href: "/services/consulting",
+    },
   ];
 
   return (
@@ -99,7 +108,7 @@ export const Navbar = () => {
                 </NavbarItem>
               );
             }
-            
+
             // Regular nav items
             return (
               <NavbarItem key={item.href}>
@@ -167,32 +176,42 @@ export const Navbar = () => {
             if (item.label === "Services") {
               return (
                 <div key={`${item}-${index}`} className="flex flex-col">
-                  <NavbarMenuItem>
-                    <Link
-                      href={item.href}
-                      size="lg"
-                      onClick={() => setMenuOpen(false)}
+                  <Accordion>
+                    <AccordionItem
+                      key="1"
+                      aria-label="Accordion 1"
+                      title="Services"
+                      className="flex flex-col text-xl -m-2"
                     >
-                      {item.label}
-                    </Link>
-                  </NavbarMenuItem>
-                  {/* Sub-menu items for mobile */}
-                  {serviceItems.map((service) => (
-                    <NavbarMenuItem key={service.key} className="ml-4">
-                      <Link
-                        href={service.href}
-                        size="md"
-                        className="text-default-500"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        {service.label}
-                      </Link>
-                    </NavbarMenuItem>
-                  ))}
+                      {/* <NavbarMenuItem>
+                        <Link
+                          href={item.href}
+                          size="lg"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      </NavbarMenuItem> */}
+
+                      {/* Sub-menu items for mobile */}
+                      {serviceItems.map((service) => (
+                        <NavbarMenuItem key={service.key} className="ml-4">
+                          <Link
+                            href={service.href}
+                            size="md"
+                            className="text-default-500"
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            {service.label}
+                          </Link>
+                        </NavbarMenuItem>
+                      ))}
+                    </AccordionItem>
+                  </Accordion>
                 </div>
               );
             }
-            
+
             return (
               <NavbarMenuItem key={`${item}-${index}`}>
                 <Link
