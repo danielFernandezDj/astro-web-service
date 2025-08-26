@@ -11,27 +11,27 @@ import { button as buttonStyles } from "@heroui/theme";
 import { useMediaQuery } from "react-responsive";
 
 import {
-  Code,
-  Menu,
-  Search,
-  Camera,
-  Share2,
-  Shield,
-  TrendingUp,
-  Truck,
-  Headphones,
+  Code2, // Development
+  ClipboardList, // Menu Redesign
+  Search, // SEO
+  Camera, // Photography & Video
+  Megaphone, // Marketing
+  Star, // Reputation Management
+  BarChart3, // Conversion Rate Optimization
+  Truck, // Delivery Platform Integration
+  Wrench, // Maintenance Plan
 } from "lucide-react";
 
 const iconMap = {
-  code: Code,
-  menu: Menu,
+  code: Code2,
+  menu: ClipboardList,
   seo: Search,
   camera: Camera,
-  social: Share2,
-  shield: Shield,
-  chart: TrendingUp,
+  social: Megaphone,
+  shield: Star,
+  chart: BarChart3,
   delivery: Truck,
-  support: Headphones,
+  support: Wrench,
 };
 
 type Service = {
@@ -317,7 +317,9 @@ export default function AstroWebServicesShowcase() {
                 <p className="text-xl font-medium">or</p>
                 <div className="flex justify-center items-center px-2 py-1 border hover:cursor-auto rounded-full border-primary bg-transparent">
                   <p className="">Call </p>
-                  <Snippet symbol="" className="bg-transparent -py-0">(702) 334-523</Snippet>
+                  <Snippet symbol="" className="bg-transparent -py-0">
+                    (702) 334-523
+                  </Snippet>
                 </div>
               </div>
             </div>

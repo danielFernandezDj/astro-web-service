@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { JSX, SVGProps, useState } from "react";
 
 import {
   Navbar as HeroUINavbar,
@@ -28,9 +28,23 @@ import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { Logo, RocketIcon } from "@/components/icons";
 
+import {
+  Code2, // Development
+  ClipboardList, // Menu Redesign
+  Search, // SEO
+  Camera, // Photography & Video
+  Megaphone, // Marketing
+  Star, // Reputation Management
+  BarChart3, // Conversion Rate Optimization
+  Truck, // Delivery Platform Integration
+  Wrench,
+  Icon, // Maintenance Plan
+} from "lucide-react";
+
 export const Navbar = () => {
   const calendly = "https://calendly.com/daniel-astrowebservice/30min";
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   // Services dropdown items
   const serviceItems = [
@@ -38,43 +52,69 @@ export const Navbar = () => {
       key: "Development",
       label: "Restaurant Website Design",
       href: "/services/Web-Design-Development",
+      icon: <Code2 size={16} />,
     },
-    { key: "Optimization", label: "Menu Redesign", href: "/services/seo" },
+    {
+      key: "Optimization",
+      label: "Menu Redesign",
+      href: "/services/seo",
+      icon: <ClipboardList size={16} />,
+    },
     {
       key: "SEO",
       label: "Restaurant SEO",
       href: "/services/maintenance",
+      icon: <Search size={16} />,
     },
     {
       key: "Production",
       label: "Photography & Video",
       href: "/services/consulting",
+      icon: <Camera size={16} />,
     },
     {
       key: "Marketing",
       label: "Social Media Marketing",
       href: "/services/consulting",
+      icon: <Megaphone size={16} />,
     },
     {
       key: "Online",
       label: "Reputation Management",
       href: "/services/consulting",
+      icon: <Star size={16} />,
     },
     {
       key: "CRO",
       label: "Conversion Rate Optimization",
       href: "/services/consulting",
+      icon: <BarChart3 size={16} />,
     },
     {
       key: "Delivery",
       label: "Delivery Platform Integration",
       href: "/services/consulting",
+      icon: <Truck size={16} />,
     },
     {
       key: "Maintenance Plan",
       label: "Monthly Care Plan",
       href: "/services/consulting",
+      icon: <Wrench size={16} />,
     },
+  ];
+
+  // Services dropdown items Colors
+  const cardColors = [
+    "bg-blue-50",
+    "bg-purple-50",
+    "bg-green-50",
+    "bg-orange-50",
+    "bg-pink-50",
+    "bg-indigo-50",
+    "bg-yellow-50",
+    "bg-teal-50",
+    "bg-red-50",
   ];
 
   return (
@@ -96,44 +136,60 @@ export const Navbar = () => {
             if (item.label === "Services") {
               return (
                 <NavbarItem key={item.href}>
-                  <Dropdown>
-                    <DropdownTrigger>
-                      <Button
-                        className={clsx(
-                          linkStyles({ color: "foreground" }),
-                          "data-[active=true]:text-primary data-[active=true]:font-medium bg-transparent px-1 h-auto font-light rounded-lg"
-                        )}
-                        color="secondary"
-                        variant="light"
-                        endContent={
-                          <svg
-                            fill="none"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            width="16"
-                            xmlns="http://www.w3.org/2000/svg"
+                  <div
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
+                  >
+                    <Dropdown
+                      isOpen={servicesOpen}
+                      onOpenChange={setServicesOpen}
+                      trigger="press" // keeps click support; hover is controlled via isOpen
+                    >
+                      <DropdownTrigger>
+                        <Button
+                          className={clsx(
+                            linkStyles({ color: "foreground" }),
+                            "data-[active=true]:text-primary data-[active=true]:font-medium bg-transparent px-1 h-auto font-light rounded-lg"
+                          )}
+                          color="secondary"
+                          variant="light"
+                          endContent={
+                            <svg
+                              fill="none"
+                              height="16"
+                              viewBox="0 0 24 24"
+                              width="16"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="m6 9 6 6 6-6"
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                              />
+                            </svg>
+                          }
+                          onFocus={() => setServicesOpen(true)}
+                          onBlur={() => setServicesOpen(false)}
+                        >
+                          {item.label}
+                        </Button>
+                      </DropdownTrigger>
+                      <DropdownMenu aria-label="Services menu">
+                        {serviceItems.map((service, index) => (
+                          <DropdownItem
+                            key={service.key}
+                            href={service.href}
+                            startContent={service.icon}
+                            className={clsx("p-3", cardColors[index])}
                           >
-                            <path
-                              d="m6 9 6 6 6-6"
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                            />
-                          </svg>
-                        }
-                      >
-                        {item.label}
-                      </Button>
-                    </DropdownTrigger>
-                    <DropdownMenu aria-label="Services menu">
-                      {serviceItems.map((service) => (
-                        <DropdownItem key={service.key} href={service.href}>
-                          {service.label}
-                        </DropdownItem>
-                      ))}
-                    </DropdownMenu>
-                  </Dropdown>
+                            {service.label}
+                          </DropdownItem>
+                        ))}
+                      </DropdownMenu>
+                    </Dropdown>
+                  </div>
                 </NavbarItem>
               );
             }
@@ -213,14 +269,18 @@ export const Navbar = () => {
                       className="flex flex-col -m-2"
                     >
                       {/* Sub-menu items for mobile */}
-                      {serviceItems.map((service) => (
-                        <NavbarMenuItem key={service.key} className="ml-4 -mt-2">
+                      {serviceItems.map((service, index) => (
+                        <NavbarMenuItem
+                          key={service.key}
+                          className="ml-4 -mt-2"
+                        >
                           <Link
                             href={service.href}
                             size="md"
-                            className="text-primary border-b border-gray-300 mb-4"
+                            className="text-primary border-b border-gray-300 mb-4 gap-2 py-1 w-full rounded-lg px-2"
                             onClick={() => setMenuOpen(false)}
                           >
+                            {service.icon}
                             {service.label}
                           </Link>
                         </NavbarMenuItem>
