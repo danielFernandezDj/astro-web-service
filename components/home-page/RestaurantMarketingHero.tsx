@@ -76,14 +76,28 @@ export default function RestaurantMarketingHero() {
                 Common Restaurant Struggles
               </span>
             </div>
-            <div className="w-full h-50 relative rounded-xl shadow-lg">
-              <Image
-                src={"/hero-img-corp.png"}
-                alt="Hero Image"
-                className="rounded-lg border-4 object-cover"
-                priority
-                fill
-              />
+
+            <div className="flex flex-col md:flex-row justify-between gap-2 p-2 w-full relative rounded-xl shadow-lg">
+              <div className="w-auto h-auto">
+                <Image
+                  src={"/z-1.png"}
+                  alt="Hero Image"
+                  className="rounded-lg h-50 object-cover"
+                  priority
+                  width={500}
+                  height={500}
+                />
+              </div>
+              <div className="w-auto h-auto  ">
+                <Image
+                  src={"/z-2.png"}
+                  alt="Hero Image"
+                  className="rounded-lg h-50 object-cover"
+                  priority
+                  width={500}
+                  height={500}
+                />
+              </div>
             </div>
             <div className="flex flex-col gap-4">
               <div className="text-error">
@@ -116,14 +130,27 @@ export default function RestaurantMarketingHero() {
                 How We Help You Succeed
               </span>
             </div>
-            <div className="w-full h-50 relative rounded-xl shadow-lg">
-              <Image
-                src={"/hero-img-corp.png"}
-                alt="Hero Image"
-                className="rounded-lg border-4 object-cover"
-                priority
-                fill
-              />
+            <div className="flex justify-between gap-2 p-2 w-full relative rounded-xl shadow-lg">
+              <div className="w-auto h-auto">
+                <Image
+                  src={"/c-1.jpg"}
+                  alt="Hero Image"
+                  className="rounded-lg h-50 object-cover"
+                  priority
+                  width={500}
+                  height={500}
+                />
+              </div>
+              <div className="w-auto h-auto hidden md:flex">
+                <Image
+                  src={"/c-3.jpg"}
+                  alt="Hero Image"
+                  className="rounded-lg h-50 object-cover"
+                  priority
+                  width={500}
+                  height={500}
+                />
+              </div>
             </div>
             <div className="flex flex-col gap-1">
               <div className={`text-success py-3 ${ListAnimation}`}>
