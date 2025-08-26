@@ -86,14 +86,15 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4 text-yellow-400">Services</h4>
             <ul className="space-y-2">
               {[
-                'Online Ordering System',
-                'Menu Design & Platform',
-                'Professional Photography', 
-                'Digital Marketing',
-                'Website Development',
-                'Customer Management',
-                'Payment Processing',
-                'Analytics & Reports'
+                'Restaurant Website Design',
+                'Menu Redesign',
+                'Restaurant SEO', 
+                'Photography & Video',
+                'Social Media Marketing',
+                'Reputation Management',
+                'Conversion Rate Optimization',
+                'Delivery Platform Integration',
+                'Monthly Care Plan',
               ].map((service, index) => (
                 <li key={index}>
                   <Link 

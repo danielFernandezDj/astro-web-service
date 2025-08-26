@@ -51,7 +51,7 @@ type ServiceCardProps = {
 };
 
 const ServiceCard = ({ service, bgColor = "bg-gray-50" }: ServiceCardProps) => {
-  const Icon = iconMap[service.icon] || Code;
+  const Icon = iconMap[service.icon];
 
   return (
     <div
