@@ -286,7 +286,7 @@ export default function AstroWebServicesShowcase() {
               </span>
               <div className="px-2 md:hidden">
                 <Image
-                  src={"/Final-woman-shef.png"}
+                  src={"/shef-end.png"}
                   alt="Hero Image"
                   className="rounded-lg"
                   priority
@@ -326,7 +326,7 @@ export default function AstroWebServicesShowcase() {
 
             <div className="p-2 md:p-0 hidden lg:inline-block">
               <Image
-                src={"/Final-woman-shef.png"}
+                src={"/shef-end.png"}
                 alt="Hero Image"
                 className="rounded-lg"
                 priority

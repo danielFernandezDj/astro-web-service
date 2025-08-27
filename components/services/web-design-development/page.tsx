@@ -59,6 +59,13 @@ const RestaurantServicePage = () => {
       ]
     }
   ];
+  
+  // ! Create the dropdown-menu for 'Services' and Fix the Woman-shef image. 
+  const coreSupport = [
+    {
+
+    }
+  ]
 
   const additionalFeatures = [
     { icon: Smartphone, text: "Mobile-first responsive design" },
