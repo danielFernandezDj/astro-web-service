@@ -45,6 +45,7 @@ export const Navbar = () => {
   const calendly = "https://calendly.com/daniel-astrowebservice/30min";
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [supportOpen, setSupportOpen] = useState(false)
 
   // Services dropdown items
   const serviceItems = [
@@ -101,6 +102,34 @@ export const Navbar = () => {
       label: "Monthly Care Plan",
       href: "/services/consulting",
       icon: <Wrench size={16} />,
+    },
+  ];
+
+   // Support dropdown items
+  const supportItems = [
+    {
+      key: "Development",
+      label: "Restaurant Website Design",
+      href: "/services/Web-Design-Development",
+      icon: <Code2 size={16} />,
+    },
+    {
+      key: "Optimization",
+      label: "Menu Redesign",
+      href: "/services/seo",
+      icon: <ClipboardList size={16} />,
+    },
+    {
+      key: "SEO",
+      label: "Restaurant SEO",
+      href: "/services/maintenance",
+      icon: <Search size={16} />,
+    },
+    {
+      key: "Production",
+      label: "Photography & Video",
+      href: "/services/consulting",
+      icon: <Camera size={16} />,
     },
   ];
 
@@ -194,6 +223,71 @@ export const Navbar = () => {
               );
             }
 
+            {
+              siteConfig.navItems.map((item) => {
+                // Special handling for Support item
+                if (item.label === "Support") {
+                  return (
+                    <NavbarItem key={item.href}>
+                      <div
+                        onMouseEnter={() => setSupportOpen(true)}
+                        onMouseLeave={() => setSupportOpen(false)}
+                      >
+                        <Dropdown
+                          isOpen={supportOpen}
+                          onOpenChange={setSupportOpen}
+                          trigger="press" // keeps click support; hover is controlled via isOpen
+                        >
+                          <DropdownTrigger>
+                            <Button
+                              className={clsx(
+                                linkStyles({ color: "foreground" }),
+                                "data-[active=true]:text-primary data-[active=true]:font-medium bg-transparent px-1 h-auto font-light rounded-lg"
+                              )}
+                              color="secondary"
+                              variant="light"
+                              endContent={
+                                <svg
+                                  fill="none"
+                                  height="16"
+                                  viewBox="0 0 24 24"
+                                  width="16"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m6 9 6 6 6-6"
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                  />
+                                </svg>
+                              }
+                              onFocus={() => setSupportOpen(true)}
+                              onBlur={() => setSupportOpen(false)}
+                            >
+                              {item.label}
+                            </Button>
+                          </DropdownTrigger>
+                          <DropdownMenu aria-label="Support menu">
+                            {supportItems.map((support, index) => (
+                              <DropdownItem
+                                key={support.key}
+                                href={support.href}
+                                startContent={support.icon}
+                                className={clsx("p-3", cardColors[index])}
+                              >
+                                {support.label}
+                              </DropdownItem>
+                            ))}
+                          </DropdownMenu>
+                        </Dropdown>
+                      </div>
+                    </NavbarItem>
+                  );
+                }
+              });
+            }
             // Regular nav items
             return (
               <NavbarItem key={item.href}>
