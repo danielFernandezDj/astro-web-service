@@ -18,9 +18,9 @@ import { Link } from '@heroui/link';
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-slate-900 text-white mt-30">
       {/* Newsletter Section */}
-      <div className="bg-gradient-to-r from-yellow-400 to-orange-500 py-12">
+      {/* <div className="bg-gradient-to-r from-yellow-400 to-orange-500 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
@@ -48,7 +48,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

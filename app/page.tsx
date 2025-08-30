@@ -174,7 +174,7 @@ export default function Home() {
       <CTAPlans />
       <ChoosePlan />
       <TimerCounter />
-      <DigitalShowcase />
+      {/* <DigitalShowcase /> */}
     </main>
   );
 }
