@@ -106,45 +106,45 @@ export const Navbar = () => {
   ];
 
    // Support dropdown items
-  const supportItems = [
-    {
-      key: "Development",
-      label: "Restaurant Website Design",
-      href: "/services/Web-Design-Development",
-      icon: <Code2 size={16} />,
-    },
-    {
-      key: "Optimization",
-      label: "Menu Redesign",
-      href: "/services/seo",
-      icon: <ClipboardList size={16} />,
-    },
-    {
-      key: "SEO",
-      label: "Restaurant SEO",
-      href: "/services/maintenance",
-      icon: <Search size={16} />,
-    },
-    {
-      key: "Production",
-      label: "Photography & Video",
-      href: "/services/consulting",
-      icon: <Camera size={16} />,
-    },
-  ];
+  // const supportItems = [
+  //   {
+  //     key: "Development",
+  //     label: "Restaurant Website Design",
+  //     href: "/services/Web-Design-Development",
+  //     icon: <Code2 size={16} />,
+  //   },
+  //   {
+  //     key: "Optimization",
+  //     label: "Menu Redesign",
+  //     href: "/services/seo",
+  //     icon: <ClipboardList size={16} />,
+  //   },
+  //   {
+  //     key: "SEO",
+  //     label: "Restaurant SEO",
+  //     href: "/services/maintenance",
+  //     icon: <Search size={16} />,
+  //   },
+  //   {
+  //     key: "Production",
+  //     label: "Photography & Video",
+  //     href: "/services/consulting",
+  //     icon: <Camera size={16} />,
+  //   },
+  // ];
 
   // Services dropdown items Colors
-  const cardColors = [
-    "bg-blue-50",
-    "bg-purple-50",
-    "bg-green-50",
-    "bg-orange-50",
-    "bg-pink-50",
-    "bg-indigo-50",
-    "bg-yellow-50",
-    "bg-teal-50",
-    "bg-red-50",
-  ];
+  // const cardColors = [
+  //   "bg-blue-50",
+  //   "bg-purple-50",
+  //   "bg-green-50",
+  //   "bg-orange-50",
+  //   "bg-pink-50",
+  //   "bg-indigo-50",
+  //   "bg-yellow-50",
+  //   "bg-teal-50",
+  //   "bg-red-50",
+  // ];
 
   return (
     <HeroUINavbar
@@ -162,132 +162,133 @@ export const Navbar = () => {
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item) => {
             // Special handling for Services item
-            if (item.label === "Services") {
-              return (
-                <NavbarItem key={item.href}>
-                  <div
-                    onMouseEnter={() => setServicesOpen(true)}
-                    onMouseLeave={() => setServicesOpen(false)}
-                  >
-                    <Dropdown
-                      isOpen={servicesOpen}
-                      onOpenChange={setServicesOpen}
-                      trigger="press" // keeps click support; hover is controlled via isOpen
-                    >
-                      <DropdownTrigger>
-                        <Button
-                          className={clsx(
-                            linkStyles({ color: "foreground" }),
-                            "data-[active=true]:text-primary data-[active=true]:font-medium bg-transparent px-1 h-auto font-light rounded-lg"
-                          )}
-                          color="secondary"
-                          variant="light"
-                          endContent={
-                            <svg
-                              fill="none"
-                              height="16"
-                              viewBox="0 0 24 24"
-                              width="16"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="m6 9 6 6 6-6"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                              />
-                            </svg>
-                          }
-                          onFocus={() => setServicesOpen(true)}
-                          onBlur={() => setServicesOpen(false)}
-                        >
-                          {item.label}
-                        </Button>
-                      </DropdownTrigger>
-                      <DropdownMenu aria-label="Services menu">
-                        {serviceItems.map((service, index) => (
-                          <DropdownItem
-                            key={service.key}
-                            href={service.href}
-                            startContent={service.icon}
-                            className={clsx("p-3", cardColors[index])}
-                          >
-                            {service.label}
-                          </DropdownItem>
-                        ))}
-                      </DropdownMenu>
-                    </Dropdown>
-                  </div>
-                </NavbarItem>
-              );
-            }
+            // if (item.label === "Services") {
+            //   return (
+            //     <NavbarItem key={item.href}>
+            //       <div
+            //         onMouseEnter={() => setServicesOpen(true)}
+            //         onMouseLeave={() => setServicesOpen(false)}
+            //       >
+            //         <Dropdown
+            //           isOpen={servicesOpen}
+            //           onOpenChange={setServicesOpen}
+            //           trigger="press" // keeps click support; hover is controlled via isOpen
+            //         >
+            //           <DropdownTrigger>
+            //             <Button
+            //               className={clsx(
+            //                 linkStyles({ color: "foreground" }),
+            //                 "data-[active=true]:text-primary data-[active=true]:font-medium bg-transparent px-1 h-auto font-light rounded-lg"
+            //               )}
+            //               color="secondary"
+            //               variant="light"
+            //               endContent={
+            //                 <svg
+            //                   fill="none"
+            //                   height="16"
+            //                   viewBox="0 0 24 24"
+            //                   width="16"
+            //                   xmlns="http://www.w3.org/2000/svg"
+            //                 >
+            //                   <path
+            //                     d="m6 9 6 6 6-6"
+            //                     stroke="currentColor"
+            //                     strokeLinecap="round"
+            //                     strokeLinejoin="round"
+            //                     strokeWidth="2"
+            //                   />
+            //                 </svg>
+            //               }
+            //               onFocus={() => setServicesOpen(true)}
+            //               onBlur={() => setServicesOpen(false)}
+            //             >
+            //               {item.label}
+            //             </Button>
+            //           </DropdownTrigger>
+            //           <DropdownMenu aria-label="Services menu">
+            //             {serviceItems.map((service, index) => (
+            //               <DropdownItem
+            //                 key={service.key}
+            //                 href={service.href}
+            //                 startContent={service.icon}
+            //                 className={clsx("p-3", cardColors[index])}
+            //               >
+            //                 {service.label}
+            //               </DropdownItem>
+            //             ))}
+            //           </DropdownMenu>
+            //         </Dropdown>
+            //       </div>
+            //     </NavbarItem>
+            //   );
+            // }
 
-            {
-              siteConfig.navItems.map((item) => {
-                // Special handling for Support item
-                if (item.label === "Support") {
-                  return (
-                    <NavbarItem key={item.href}>
-                      <div
-                        onMouseEnter={() => setSupportOpen(true)}
-                        onMouseLeave={() => setSupportOpen(false)}
-                      >
-                        <Dropdown
-                          isOpen={supportOpen}
-                          onOpenChange={setSupportOpen}
-                          trigger="press" // keeps click support; hover is controlled via isOpen
-                        >
-                          <DropdownTrigger>
-                            <Button
-                              className={clsx(
-                                linkStyles({ color: "foreground" }),
-                                "data-[active=true]:text-primary data-[active=true]:font-medium bg-transparent px-1 h-auto font-light rounded-lg"
-                              )}
-                              color="secondary"
-                              variant="light"
-                              endContent={
-                                <svg
-                                  fill="none"
-                                  height="16"
-                                  viewBox="0 0 24 24"
-                                  width="16"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="m6 9 6 6 6-6"
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                  />
-                                </svg>
-                              }
-                              onFocus={() => setSupportOpen(true)}
-                              onBlur={() => setSupportOpen(false)}
-                            >
-                              {item.label}
-                            </Button>
-                          </DropdownTrigger>
-                          <DropdownMenu aria-label="Support menu">
-                            {supportItems.map((support, index) => (
-                              <DropdownItem
-                                key={support.key}
-                                href={support.href}
-                                startContent={support.icon}
-                                className={clsx("p-3", cardColors[index])}
-                              >
-                                {support.label}
-                              </DropdownItem>
-                            ))}
-                          </DropdownMenu>
-                        </Dropdown>
-                      </div>
-                    </NavbarItem>
-                  );
-                }
-              });
-            }
+            // {
+            //   siteConfig.navItems.map((item) => {
+            //     // Special handling for Support item
+            //     if (item.label === "Support") {
+            //       return (
+            //         <NavbarItem key={item.href}>
+            //           <div
+            //             onMouseEnter={() => setSupportOpen(true)}
+            //             onMouseLeave={() => setSupportOpen(false)}
+            //           >
+            //             <Dropdown
+            //               isOpen={supportOpen}
+            //               onOpenChange={setSupportOpen}
+            //               trigger="press" // keeps click support; hover is controlled via isOpen
+            //             >
+            //               <DropdownTrigger>
+            //                 <Button
+            //                   className={clsx(
+            //                     linkStyles({ color: "foreground" }),
+            //                     "data-[active=true]:text-primary data-[active=true]:font-medium bg-transparent px-1 h-auto font-light rounded-lg"
+            //                   )}
+            //                   color="secondary"
+            //                   variant="light"
+            //                   endContent={
+            //                     <svg
+            //                       fill="none"
+            //                       height="16"
+            //                       viewBox="0 0 24 24"
+            //                       width="16"
+            //                       xmlns="http://www.w3.org/2000/svg"
+            //                     >
+            //                       <path
+            //                         d="m6 9 6 6 6-6"
+            //                         stroke="currentColor"
+            //                         strokeLinecap="round"
+            //                         strokeLinejoin="round"
+            //                         strokeWidth="2"
+            //                       />
+            //                     </svg>
+            //                   }
+            //                   onFocus={() => setSupportOpen(true)}
+            //                   onBlur={() => setSupportOpen(false)}
+            //                 >
+            //                   {item.label}
+            //                 </Button>
+            //               </DropdownTrigger>
+            //               <DropdownMenu aria-label="Support menu">
+            //                 {supportItems.map((support, index) => (
+            //                   <DropdownItem
+            //                     key={support.key}
+            //                     href={support.href}
+            //                     startContent={support.icon}
+            //                     className={clsx("p-3", cardColors[index])}
+            //                   >
+            //                     {support.label}
+            //                   </DropdownItem>
+            //                 ))}
+            //               </DropdownMenu>
+            //             </Dropdown>
+            //           </div>
+            //         </NavbarItem>
+            //       );
+            //     }
+            //   });
+            // }
+            
             // Regular nav items
             return (
               <NavbarItem key={item.href}>
