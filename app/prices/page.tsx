@@ -1,11 +1,14 @@
-"use client"
+"use client";
 
 import { title } from "@/components/primitives";
+import ChoosePlan from "@/components/home-page/ChoosePLan";
+import TimerCounter from "@/components/home-page/TimerCounter";
 
 export default function Prices() {
   return (
-    <div>
-      <h1 className={title()}>Prices</h1>
-    </div>
+    <main className="flex flex-col gap-24">
+      <ChoosePlan />
+      <TimerCounter />
+    </main>
   );
 }

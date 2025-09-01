@@ -13,21 +13,21 @@ export const siteConfig = {
       href: "/prices",
     },
     {
+      label: "Designs",
+      href: "/designs",
+    },
+    {
       label: "Services",
       href: "/services",
     },
     {
-      label: "Our Work",
-      href: "/our-work",
+      label: "Support",
+      href: "/support",
     },
     // {
-    //   label: "Support",
-    //   href: "/support",
+    //   label: "Contact",
+    //   href: "/contact",
     // },
-    {
-      label: "Contact",
-      href: "/contact",
-    },
   ],
   navMenuItems: [
     {
