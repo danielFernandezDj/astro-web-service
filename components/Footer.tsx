@@ -1,20 +1,20 @@
-import React from 'react';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Facebook, 
-  Twitter, 
-  Instagram, 
+import React from "react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Facebook,
+  Twitter,
+  Instagram,
   Linkedin,
   ChefHat,
-  ArrowRight
-} from 'lucide-react';
+  ArrowRight,
+} from "lucide-react";
 
-import { Button } from '@heroui/button';
-import { Input } from '@heroui/input';
-import { Link } from '@heroui/link';
+import { Button } from "@heroui/button";
+import { Input } from "@heroui/input";
+import { Link } from "@heroui/link";
 
 const Footer = () => {
   return (
@@ -53,7 +53,6 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -63,19 +62,33 @@ const Footer = () => {
               <span className="text-xl font-bold">RestaurantPro</span>
             </div>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Elevating your restaurant's digital presence with cutting-edge technology and exceptional service. From online ordering to customer management.
+              Elevating your restaurant's digital presence with cutting-edge
+              technology and exceptional service. From online ordering to
+              customer management.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-yellow-400 transition-colors"
+              >
                 <Facebook size={20} />
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-yellow-400 transition-colors"
+              >
                 <Twitter size={20} />
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-yellow-400 transition-colors"
+              >
                 <Instagram size={20} />
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-yellow-400 transition-colors"
+              >
                 <Linkedin size={20} />
               </Link>
             </div>
@@ -110,21 +123,23 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-yellow-400">Company</h4>
+            <h4 className="text-lg font-semibold mb-4 text-yellow-400">
+              Company
+            </h4>
             <ul className="space-y-2">
               {[
-                'About Us',
-                'Our Story',
-                'Careers',
-                'Press Kit',
-                'Partners',
-                'Success Stories',
-                'Blog',
-                'Help Center'
+                "About Us",
+                "Our Story",
+                "Careers",
+                "Press Kit",
+                "Partners",
+                "Success Stories",
+                "Blog",
+                "Help Center",
               ].map((item, index) => (
                 <li key={index}>
-                  <Link 
-                    href="#" 
+                  <Link
+                    href="#"
                     className="text-slate-300 hover:text-yellow-400 transition-colors text-sm"
                   >
                     {item}
@@ -136,20 +151,23 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-yellow-400">Contact Us</h4>
+            <h4 className="text-lg font-semibold mb-4 text-yellow-400">
+              Contact Us
+            </h4>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-yellow-400 mt-1 flex-shrink-0" />
                 <span className="text-slate-300 text-sm">
-                  123 Business Ave<br />
+                  123 Business Ave
+                  <br />
                   Las Vegas, NV 89101
                 </span>
               </div>
-              
+
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-yellow-400 flex-shrink-0" />
-                <Link 
-                  href="tel:+1234567890" 
+                <Link
+                  href="tel:+1234567890"
                   className="text-slate-300 hover:text-yellow-400 transition-colors text-sm"
                 >
                   (123) 456-7890
@@ -158,8 +176,8 @@ const Footer = () => {
 
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-yellow-400 flex-shrink-0" />
-                <Link 
-                  href="mailto:info@restaurantpro.com" 
+                <Link
+                  href="mailto:info@restaurantpro.com"
                   className="text-slate-300 hover:text-yellow-400 transition-colors text-sm"
                 >
                   info@restaurantpro.com
@@ -187,16 +205,28 @@ const Footer = () => {
               © 2025 RestaurantPro. All rights reserved.
             </div>
             <div className="flex flex-wrap justify-center sm:justify-end space-x-6 text-sm">
-              <Link href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-yellow-400 transition-colors"
+              >
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-yellow-400 transition-colors"
+              >
                 Terms of Service
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-yellow-400 transition-colors"
+              >
                 Cookie Policy
               </Link>
-              <Link href="#" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link
+                href="#"
+                className="text-slate-400 hover:text-yellow-400 transition-colors"
+              >
                 Sitemap
               </Link>
             </div>
