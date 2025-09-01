@@ -10,7 +10,7 @@ export default function CTAPlans() {
   const calendly = "https://calendly.com/daniel-astrowebservice/30min";
 
   // Define the target date
-  const targetDate = new Date("2025-08-30T00:00:00");
+  const targetDate = new Date("2025-09-25T00:00:00");
 
   // Helper to calculate the time left
   const calculateTimeLeft = () => {

@@ -10,6 +10,8 @@ import Link from "next/link";
 import { button as buttonStyles } from "@heroui/theme";
 import { useMediaQuery } from "react-responsive";
 
+import { RocketIcon } from "@/components/icons";
+
 import {
   Code2, // Development
   ClipboardList, // Menu Redesign
@@ -82,9 +84,17 @@ const ServiceCard = ({ service, bgColor = "bg-gray-50" }: ServiceCardProps) => {
         ))}
       </ul>
 
-      <button className="w-full border border-primary text-primary hover:bg-secondary py-2.5 px-4 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm">
-        {service.ctaLabel}
-      </button>
+      {/* Button */}
+      <Link
+        href={"https://calendly.com/daniel-astrowebservice/30min"}
+        target="_blank"
+        className="w-full border border-primary text-primary hover:bg-secondary py-2.5 px-4 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm"
+      >
+        {/* {service.ctaLabel} */}
+        <div className="flex justify-center items-center gap-2">
+          <RocketIcon size={16} /> Get Started
+        </div>
+      </Link>
     </div>
   );
 };
@@ -297,11 +307,7 @@ export default function AstroWebServicesShowcase() {
               <span className={subtitle({ size: "md", class: "px-2 -mt-2" })}>
                 If you’re looking for the best marketing agency that delivers
                 real results — not just clicks and impressions — you’re in the
-                right place.{" "}
-                <span className="hidden md:inline-block">
-                  Contact us today to work with a results-driven digital
-                  marketing agency.
-                </span>
+                right place.
               </span>
               <div className="flex flex-col md:flex-row items-center gap-2">
                 <Link
