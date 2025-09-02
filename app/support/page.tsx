@@ -19,18 +19,18 @@ export default function SupportPage() {
   const calendly = "https://calendly.com/daniel-astrowebservice/30min";
 
   return (
-    <main className="flex flex-col gap-34">
+    <main className="flex flex-col gap-24 md:gap-34">
       {/* Hero Section */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 place-content-center w-xl m-auto lg:w-auto">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 place-content-center md:w-xl m-auto lg:w-auto">
         <div className="flex flex-col justify-center lg:text-start gap-6 w-full">
           <h1 className={title()}>
             Expert support. <br /> Fast response time.
           </h1>
           <div className="lg:hidden flex justify-center">
             <Image
-              src={"/hero-img-corp.png"}
+              src={"/support-hero-img.png"}
               alt="Astroweb Support Team"
-              className="rounded-2xl border-4 border-gray-100"
+              className="rounded-2xl border-gray-100 -m-8"
               priority
               width={500}
               height={500}
@@ -46,7 +46,7 @@ export default function SupportPage() {
           <Link
             href={calendly}
             target="_blank"
-            className="w-fit m-auto lg:m-none border border-primary text-primary hover:bg-secondary py-3 px-6 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+            className="w-fit m-auto lg:m-0 border border-primary text-primary hover:bg-secondary py-3 px-6 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
           >
             <div className="flex justify-center items-center gap-2">
               <RocketIcon size={18} /> Connect with us {"->"}
@@ -56,19 +56,22 @@ export default function SupportPage() {
 
         <div className="hidden lg:flex justify-center">
           <Image
-            src={"/hero-img-corp.png"}
+            src={"/support-hero-img.png"}
             alt="Astroweb Support Team"
             className="rounded-2xl border-4 border-gray-100"
             priority
-            width={500}
+            width={800}
             height={500}
           />
         </div>
       </section>
 
+      {/* Spacer Line */}
+      <hr className="text-primary/20 w-auto md:w-4xl md:m-auto" />
+
       {/* Need Help? */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start md:m-auto md:w-xl lg:w-full">
-        <div className="flex flex-col md:text-start gap-6">
+        <div className="flex flex-col lg:text-start gap-6">
           <div>
             <h2 className={title({ size: "md" })}>
               Need Help <span className="text-secondary">?</span>
@@ -87,7 +90,7 @@ export default function SupportPage() {
           <Link
             href={calendly}
             target="_blank"
-            className="w-70 m-4 lg:w-fit bg-primary text-white hover:bg-primary/90 py-3 px-6 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+            className=" lg:w-fit bg-primary text-white hover:bg-primary/90 py-3 px-6 rounded-2xl font-medium hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
           >
             <div className="flex justify-center items-center gap-2">
               Get your free consultation →
@@ -139,6 +142,9 @@ export default function SupportPage() {
           </div>
         </div>
       </section>
+
+      {/* Spacer Line */}
+      <hr className="text-primary/20 w-auto md:w-4xl md:m-auto" />
 
       {/* Business Hours Schedule */}
       <section className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8">
@@ -213,6 +219,9 @@ export default function SupportPage() {
           </div>
         </div>
       </section>
+
+      {/* Spacer Line */}
+      <hr className="text-primary/20 w-auto md:w-4xl md:m-auto" />
 
       {/* How Can We Help? */}
       <section className="bg-white rounded-2xl py-16">
